@@ -1,22 +1,18 @@
 
-import './App.scss';
+import './styles/App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="App__header">
+        <h1>Les locaux du réseau</h1>
       </header>
+
+      <main className='App__main'>
+        <div>
+          <h2>Test</h2>
+        </div>
+      </main>
     </div>
   );
 }

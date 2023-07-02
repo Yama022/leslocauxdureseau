@@ -1,13 +1,159 @@
+
+
 .App {
   // text-align: center;
+  height: 100vh;
+  position: relative;
   &__header {
-    background-color: #282c34;
+    background-color: $secondary;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    font-size: calc(10px + 2vmin);
     color: white;
+    position: sticky;
+    &__title {
+      // border: 1px solid red;
+      width: 15%;
+      text-transform: uppercase;
+      display: flex;
+      h1 {
+        padding-left: .2em;
+      }
+      span {
+        color: $primary;
+      }
+      img {
+        margin-right: .1em;
+        width: 20%;
+        object-fit: contain;
+      }
+
+    }
+
+  }
+  &__main {
+    &__content {
+      &__subtitle {
+        border: 1px solid red;
+        width: 75%;
+        margin: auto;
+        h2 {
+          border: 1px solid blue;
+          text-align: center;
+        }
+        &__desc {
+          border: 1px solid green;
+          width: 45%;
+          display: flex;
+          flex-direction: column;
+          margin: auto;
+          p {
+            display: inline;
+            margin: 0;
+          }
+        }
+      }
+      &__description {
+        border: 1px solid red;
+        p {
+          text-align: center;
+          font-size: 2rem;
+        }
+        &__list {
+          border: 1px solid black;
+          width: 75%;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          &--1, &--2, &--3, &--4, &--5 {
+            border: 1px solid green;
+            width: 75%;
+            height: 100%;
+            margin: auto;
+            height: 40vh;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            h2 {
+              // width: 100%;
+              border: 1px solid red;
+            }
+            &__activity {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+              // border: 1px solid blue;
+              width: 100%;
+              p {
+                margin: 0;
+                display: inline;
+                width: 45%;
+                height: 90%;
+                font-size: 1.5rem;
+                text-align: left;
+                font-style: italic;
+                border: 1px solid brown;
+                a {
+                  display: block;
+                  color: $primary;
+                  text-decoration: none;
+                  &:hover {
+                    text-decoration: underline;
+                  }
+                }
+              }
+              img {
+                height: 90%;
+                border: 1px solid brown;
+                max-width: 25%;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__contact, &__footer {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: $primary;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__footer {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    button {
+      border: none;
+      background-color: transparent;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 
+.modal {
+  border: 1px solid red;
+  position: absolute;
+  left: 20%;
+  // top: 20%;
+  // bottom: 0;
+  display: none;
+  &--open {
+    display: block;
+  }
+  &--close {
+    display: none;
+  }
+}

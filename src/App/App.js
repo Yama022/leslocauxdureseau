@@ -75,13 +75,12 @@ function App() {
 
                   <div className="App__main__content__description__list__item-1__left">
                     <div className="App__main__content__description__list__item-1__left__title">
-                      <h3>Un Centre de formation</h3>
-                      <h4>F.I.R.E Formations</h4>
+                      <h3>Une Maquilleuse Professionnelle</h3>
+                      <h4>Jade</h4>
                       <img src={sab} alt="profil" />
                     </div>
                     <div className="App__main__content__description__list__item-1__left__desc">
-                      <p>Spécialisé dans le domaine de la formation Santé et sécurité au travail, venez-vous former aux secourisme, à l’incendie, etc…
-                        Toutes nos formations sont consultables sur notre site internet.
+                      <p>Maquilleuse artistique professionnelle diplômée basée a Paris. Pour colorer vos projets, souligner vos idées, ou sublimer vos inspirations, contactez moi !
                       </p>
                       <a href="https://www.fire-formations.com" rel="noreferrer" target='_blank'>fire-formations.com</a>
                     </div>

@@ -85,7 +85,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 &__title {
-                  width: 60%;
+                  width: 80%;
                   height: 20vh;
                   display: flex;
                   flex-direction: column;
@@ -96,16 +96,18 @@
                     margin-left: 1rem;
                     position: absolute;
                     top: 2%;
+                    left: 20%;
                   }
                   h4 {
                     position: absolute;
                     font-size: 1.2rem;
                     margin-left: 1rem;
                     bottom: 0;
+                    left: 20%;
                   }
                   img {
                     position: absolute;
-                    right: 5%;
+                    left: 2%;
                     top: 5%;
                     width: 15%;
                     object-fit: contain;

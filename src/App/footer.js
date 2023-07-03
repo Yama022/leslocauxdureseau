@@ -18,7 +18,7 @@ export default function Footer() {
     <div>
             <div className="App__contact">
         CONTACT:
-        <p>contact@leslocauxdureseau.com</p>
+        <a href="mailto:contact@leslocauxdureseau.com">contact@leslocauxdureseau.com</a>
         <p>Tél: 06.17.79.85.04 </p>
         <a href="www.leslocauxdureseaux.com">www.leslocauxdureseaux.com</a>
       </div>

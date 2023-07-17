@@ -15,15 +15,15 @@ export default function Footer() {
     modal.classList.add('modal--close');
   }
   return (
-    <div>
-            <div className="App__contact">
+    <div className='App__footer'>
+      <div className="App__footer__contact">
         CONTACT:
         <a href="mailto:contact@leslocauxdureseau.com">contact@leslocauxdureseau.com</a>
         <p>Tél: 06.17.79.85.04 </p>
         <a href="www.leslocauxdureseaux.com">www.leslocauxdureseaux.com</a>
       </div>
 
-      <div className="App__footer">
+      <div className="App__footer__content">
         <p>
           © 2023 Les locaux du réseau
         </p>

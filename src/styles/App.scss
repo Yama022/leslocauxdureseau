@@ -1,56 +1,258 @@
+// .reserved-day {
+//   background-color: red !important;
+// }
+
+// SI réservation unique pour la journée
+.react-calendar .reserved-day-fire {
+  background-color: #DCA343;
+}
+.react-calendar .reserved-day-makeup {
+  background-color: #00C3CB;
+}
+.react-calendar .reserved-day-massage {
+  background-color: #16C34A;
+}
+.react-calendar .reserved-day-hypno {
+  background-color: #845EC2;
+}
+
+// SI réservations multiples sur une journée 
+
+.day-tile.reserved-day-fire-morning::before,
+.day-tile.reserved-day-makeup-morning::before,
+.day-tile.reserved-day-massage-morning::before,
+.day-tile.reserved-day-hypno-morning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 45px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.day-tile.reserved-day-fire-morning::before {
+  background-color: #DCA343;
+}
+
+.day-tile.reserved-day-makeup-morning::before {
+  background-color: #00C3CB;
+}
+
+.day-tile.reserved-day-massage-morning::before {
+  background-color: #16C34A;
+}
+
+.day-tile.reserved-day-hypno-morning::before {
+  background-color: #845EC2;
+}
+
+.day-tile.reserved-day-fire-afternoon::after,
+.day-tile.reserved-day-makeup-afternoon::after,
+.day-tile.reserved-day-massage-afternoon::after,
+.day-tile.reserved-day-hypno-afternoon::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 45px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  
+}
+
+.day-tile.reserved-day-fire-afternoon::after {
+  background-color: #DCA343;
+}
+
+.day-tile.reserved-day-makeup-afternoon::after {
+  background-color: #00C3CB;
+}
+
+.day-tile.reserved-day-massage-afternoon::after {
+  background-color: #16C34A;
+}
+
+.day-tile.reserved-day-hypno-afternoon::after {
+  background-color: #845EC2;
+}
+
+.day-tile {
+  position: relative;
+}
+
+.react-calendar {
+  position: relative;
+  min-width: 100%;
+  min-height: auto;
+  color: $primary-light;
+}
+
+
+
 
 
 .App {
-  // text-align: center;
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
+  z-index: 999;
   &__header {
-    background-color: $secondary;
+    width: 100%;
+    // height: 10vh;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
     display: flex;
-    flex-direction: column;
-    color: white;
-    // position: sticky;
+    justify-content: space-between;
+    align-items: center; 
+    color: $secondary;
+    border-bottom: 2px solid $secondary;
+    box-shadow: 0px 1px 10px $secondary;
+    padding: 0 1em;
+    
     &__title {
-      // border: 1px solid red;
-      width: 15%;
-      text-transform: uppercase;
       display: flex;
-      h1 {
-        padding-left: .2em;
-      }
-      span {
-        color: $primary;
-      }
-      img {
-        margin-right: .1em;
-        width: 20%;
-        object-fit: contain;
-      }
+      align-items: center;
+      font-weight: bold;
+      flex-direction: column;
 
+      a {
+        text-decoration: none;
+        color: $secondary;
+        display: flex;
+        h1 {
+          padding-left: 0.4em;
+          color: rgb(54, 54, 54);
+        }
+        
+        span {
+          color: rgb(153, 131, 92);
+          display: flex;
+        }
+        
+        img {
+          margin-right: 0.1em;
+          width: 5%;
+          object-fit: contain;
+        }
+      }
     }
+    &__login {
+      margin-right: 2rem;
+      display: flex;
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.5em;
+        input {
+          border: 1px solid $primary-light;
+          color: $tertiary;
+          padding: 0.5em; 
+          outline: none; 
+  
+          &:focus {
+            border-color: darken($primary-light, 10%);
+          }
+        }
+        button {
+          background-color: $primary-light;
+          color: white;
+          border: none;
+          padding: 0.5em 1em;
+          border-radius: 0.5em;
+          font-weight: bold;
+          cursor: pointer;
+          &:hover {
+            background-color: white;
+            color: $primary-light;
+            border: 2px solid $primary-light;
+          }
+        }
+      }
 
+      &__text {
+        color: green;
+        margin-right: 1rem;
+        align-self: center;
+        &--error {
+          color: red;
+        }
+      }
+      &__greeting {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      
+        &__text {
+          color: green;
+        }
+      
+        &__button {
+          background-color: $primary-light;
+          color: white;
+          border: none;
+          padding: 0.5em 1em;
+          border-radius: 0.5em;
+          font-weight: bold;
+          cursor: pointer;
+      
+          &:hover {
+            background-color: white;
+            color: $primary-light;
+            font-weight: bold;
+            border: 2px solid $primary-light;
+          }
+        }
+      }
+      
+    }
   }
+  
+  
   &__main {
     &__content {
+      margin-top: 10%;
       &__subtitle {
+        text-align: center;
+        margin-bottom: 1.875rem;
         width: 75%;
         margin: auto;
+      
         h2 {
-          text-align: center;
+          font-size: 1.75rem;
+          color: $primary-light;
+          margin-bottom: 1.25rem;
+          text-transform: uppercase;
+          font-weight: bold;
         }
+      
         &__desc {
-          width: 45%;
-          display: flex;
-          flex-direction: column;
-          margin: auto;
+          background-color: $secondary;
+          padding: 1.25rem;
+          border-radius: 0.625rem;
+          box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+          
           p {
-            display: inline;
-            margin: 0;
+            font-size: 1rem;
+            color: $primary-light;
+            line-height: 1.5;
+            margin-bottom: 0.625rem;
+          }
+          
+          h3 {
+            font-size: 1.25rem;
+            color: $tertiary;
+            margin-top: 1.25rem;
+            font-weight: bold;
           }
         }
       }
       &__description {
-        // border: 1px solid red;
         margin-top: 5rem;
         p {
           width: 38%;
@@ -59,7 +261,7 @@
           text-align: center;
           font-size: 2rem;
           span {
-            color: $primary;
+            color: $primary-light;
             font-weight: bold;
           }
         }
@@ -77,25 +279,72 @@
           display: flex;
           flex-direction: column;
           &__item {
-            &-1, &-2 {
+            &-1 {
+              border: 2px solid $fire;
+              box-shadow: 2px 2px 15px 0px $fire;
+              &__left {
+                &__desc {
+                  border-top: 2px solid $fire;
+                  a {
+                    color: $fire;
+                  }
+                }
+              }
+            }
+            &-2 {
+              border: 2px solid $makeup;
+              box-shadow: 2px 2px 15px 0px $makeup;
+              &__left {
+                &__desc {
+                  border-top: 2px solid $makeup;
+                  a {
+                    color: $makeup;
+                  }
+                }
+              }
+            }
+            &-3 {
+              border: 2px solid $massage;
+              box-shadow: 2px 2px 15px 0px $massage;
+              &__left {
+                &__desc {
+                  border-top: 2px solid $massage;
+                  a {
+                    color: $massage;
+                  }
+                }
+              }
+            }
+            &-4 {
+              border: 2px solid $hypno;
+              box-shadow: 2px 2px 15px 0px $hypno;
+              &__left {
+                &__desc {
+                  border-top: 2px solid $hypno;
+                  a {
+                    color: $hypno;
+                  }
+                }
+              }
+            }
+            &-1, &-2, &-3, &-4 {
               width: 100%;
               height: 50vh;
-              border: 2px solid $primary;
               border-radius: 8px;
-              box-shadow: 1px 1px 2px 0px $primary;
               display: flex;
               justify-content: space-between;
               position: relative;
               margin-bottom: 2rem;
               &__left {
                 width: 50%;
-                min-height: 100%;
+                max-height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
+                // justify-content: space-between;
                 &__title {
+                  // border: 1px solid blue;
                   width: 80%;
-                  height: 20vh;
+                  // height: 20vh;
                   display: flex;
                   flex-direction: column;
                   position: relative;
@@ -123,9 +372,9 @@
                   }
                 }
                 &__desc {
-                  border-top: 1px solid $primary;
                   width: 80%;
-                  min-height: 70%;
+                  // height: auto;
+                  border: 1px solid red;
                   margin: auto;
                   display: flex;
                   flex-direction: column;
@@ -136,10 +385,14 @@
                     font-size: 1rem;
                     text-align: left;
                   }
+                  // h5 {
+                  //   font-size: 1rem;
+                  //   font-weight: bold;
+                  //   margin-bottom: 1rem;
+                  // }
                   a {
                     margin-top: 25%;
                     text-decoration: none;
-                    color: $primary;
                     margin-bottom: 2rem;
                     &:hover {
                       text-decoration: underline;
@@ -165,7 +418,7 @@
           margin-bottom: 5rem;
           text-align: center;
           h3 {
-            color: $primary;
+            color: $primary-light;
             width: 100%;
             font-size: 1.5rem;
             font-weight: bold;
@@ -184,31 +437,35 @@
       }
     }
   }
-  &__contact, &__footer {
-    width: 75%;
+  &__footer {
+    z-index: 999;
+    width: 100%;
     margin: auto;
     text-align: center;
-    position: sticky;
+    display: flex;
+    flex-direction: column;
+    position: static; 
+    margin-top: auto; 
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // background-color: $primary;
+    border-bottom: 2px solid $secondary;
+    box-shadow: 0px 1px 10px $secondary;
     a {
       display: block;
       text-decoration: none;
-      color: $primary;
+      color: $primary-light;
       &:hover {
         text-decoration: underline;
       }
     }
-  }
-  &__contact {
-    bottom: 5%;
-    left: 10%;
-  }
-  &__footer {
+    &__content {
     width: 20%;
     display: flex;
     justify-content: space-between;
     margin-top: 1rem;
-    bottom: 0;
-    left: 37%;
+    margin: auto;
     button {
       border: none;
       background-color: transparent;
@@ -217,20 +474,85 @@
         text-decoration: underline;
       }
     }
+    }
+    &__contact {
+      margin-top: 1rem;
+      bottom: 5%;
+      left: 10%;
+    }
   }
 }
 
-.react-calendar{
-  margin-left: 35%;
+
+.form-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+
+  h3 {
+    font-size: 1.5rem;
+    color: $primary-light;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    font-size: 1rem;
+    color: $primary-light;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid $primary-light;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    &.day {
+      box-shadow: none !important;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  button {
+    width: 30%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: $primary-light;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+    &:nth-last-child(2) {
+      margin-right: 1rem;
+    }
+  }
+
+  button:hover {
+    background-color: darken($secondary, 10%);
+  }
 }
 
 
 .modal {
   border: 1px solid red;
+  background-color: $primary-light;
+  width: 90%;
   position: absolute;
-  left: 20%;
-  // top: 20%;
-  // bottom: 0;
+  right: 0;
+  bottom: 5%;
   display: none;
   &--open {
     display: block;

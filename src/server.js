@@ -35,8 +35,6 @@ const db = admin.firestore();
 // Configurez SendGrid
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// sgMail.setApiKey("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");
-
 // app.post('/send-email', function (req, res) {
 //   const data = req.body;
 //   // Envoyer l'e-mail via SendGrid

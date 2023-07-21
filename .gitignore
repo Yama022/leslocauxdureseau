@@ -10,6 +10,7 @@
 
 # production
 /build
+/src/key/les-locaux-du-reseau.json
 
 # misc
 .DS_Store
@@ -21,3 +22,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+sendgrid.env

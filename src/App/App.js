@@ -8,8 +8,11 @@ import Calendar from "react-calendar";
 import Footer from "./footer";
 import logo from "../images/logo.png";
 import fire from "../images/fire1.png";
+import hall1 from "../images/hall1.jpeg";
 import jade from "../images/scorpius.jpg";
 import formation from "../images/formation3.jpeg";
+import massage from "../images/massage.jpeg";
+import hypno from "../images/hypno.jpeg";
 import jadeVideo from "../images/jadeVideo.mp4";
 import locaux from "../images/locaux.mp4";
 
@@ -93,10 +96,15 @@ function App() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-
+  
     firebase
       .auth()
-      .signInWithEmailAndPassword(formData.email, formData.password)
+      .setPersistence(firebase.auth.Auth.Persistence.SESSION)
+      .then(() => {
+        return firebase
+          .auth()
+          .signInWithEmailAndPassword(formData.email, formData.password);
+      })
       .then((userCredential) => {
         // L'utilisateur est connecté
         setIsConnected(true); // Connecte l'utilisateur pour l'affichage du formulaire
@@ -111,6 +119,7 @@ function App() {
         console.error("Error logging in", error);
       });
   };
+  
 
 
   const handleLogout = (e) => {
@@ -456,7 +465,7 @@ function App() {
                   <div className="App__main__content__description__list__item-3__left">
                     <div className="App__main__content__description__list__item-3__left__title">
                       <h3>Unavailable</h3>
-                      <h4>Massage</h4>
+                      <h4>Bien-être</h4>
                       <img src={logo} alt="profil" />
                     </div>
                     <div className="App__main__content__description__list__item-3__left__desc">
@@ -479,7 +488,7 @@ function App() {
                   </div>
 
                   <div className="App__main__content__description__list__item-3__right">
-                    <img src={formation} alt="logo" />
+                    <img src={massage} alt="logo" />
                   </div>
                 </div>
 
@@ -510,7 +519,7 @@ function App() {
                   </div>
 
                   <div className="App__main__content__description__list__item-4__right">
-                    <img src={formation} alt="logo" />
+                    <img src={hypno} alt="logo" />
                   </div>
                 </div>
 

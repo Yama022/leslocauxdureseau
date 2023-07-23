@@ -1,6 +1,6 @@
 {
   "name": "leslocauxdureseau",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "proxy": "http://localhost:5001",
   "dependencies": {
@@ -28,10 +28,10 @@
     "start": "react-scripts start",
     "server": "node src/server.js",
     "build": "react-scripts build",
-    "start:prod": "node src/server.js",
+    "start:prod": "pm2 start src/server.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
+  },  
   "eslintConfig": {
     "extends": [
       "react-app",

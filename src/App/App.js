@@ -693,7 +693,7 @@ function App() {
                           -- Sélectionnez une plage horaire --
                         </option>
                         <option value="10-13">10h - 13h</option>
-                        <option value="14-19">14h - 19h</option>
+                        <option value="14-19">14h - 18h</option>
                       </select>
 
                       <label htmlFor="journeeComplete">Journée complète</label>

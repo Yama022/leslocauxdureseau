@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
-// import { useList } from "react-firebase-hooks/database";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "../data/firebase";
 import 'firebase/firestore';
 import emailjs from "emailjs-com";
 import Calendar from "react-calendar";
 import Footer from "./footer";
-import logo from "../images/logo.png";
+import logo from "../images/logoLocaux.png";
 import fire from "../images/fire1.png";
-import hall1 from "../images/hall1.jpeg";
 import jade from "../images/scorpius.jpg";
 import formation from "../images/formation3.jpeg";
 import massage from "../images/massage.jpeg";
@@ -425,7 +423,7 @@ function App() {
                 <div className="App__main__content__description__list__item-2">
                   <div className="App__main__content__description__list__item-2__left">
                     <div className="App__main__content__description__list__item-2__left__title">
-                      <h3>Une Maquilleuse Artistique Professionnelle</h3>
+                      <h3>Maquilleuse Artistique Pro</h3>
                       <h4>Scorpius MUA</h4>
                       <img src={jade} alt="profil" />
                     </div>
@@ -495,8 +493,8 @@ function App() {
                 <div className="App__main__content__description__list__item-4">
                   <div className="App__main__content__description__list__item-4__left">
                     <div className="App__main__content__description__list__item-4__left__title">
-                      <h3>Unavailable</h3>
-                      <h4>Hypno</h4>
+                      <h3>Xavier Clausse</h3>
+                      <h4>Les Hypnotiseurs / Hypnoteam production</h4>
                       <img src={logo} alt="profil" />
                     </div>
                     <div className="App__main__content__description__list__item-4__left__desc">
@@ -513,7 +511,7 @@ function App() {
                         >
                           unavailable
                         </a>
-                        <h5>Ou au : <a href="tel:#">unavailable</a></h5>
+                        <h5>Ou au : <a href="tel:0673390845">06.73.39.08.45</a></h5>
                       </div>
                     </div>
                   </div>

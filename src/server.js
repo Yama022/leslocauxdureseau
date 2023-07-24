@@ -8,12 +8,12 @@ const sgMail = require('@sendgrid/mail');
 require('dotenv').config();
 
 
-// app.use(cors());
-// app.use(cors({ origin: 'http://localhost:3000' }));
-// app.use(cors({
-//   origin: 'http://localhost:3000', // change this to your front-end url
-//   credentials: true
-// }));
+app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({
+  origin: 'http://localhost:3000', // change this to your front-end url
+  credentials: true
+}));
 
 // app.use(function(req, res, next) {
 //   res.header("Access-Control-Allow-Origin", "http://localhost:3000");
